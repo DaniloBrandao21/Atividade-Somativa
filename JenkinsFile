@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+    DOCKER_HOST = 'tcp://localhost:2375'
+    }
     agent {
         docker {
             image 'maven:3.9.0-eclipse-temurin-11' 
@@ -8,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean package"
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
