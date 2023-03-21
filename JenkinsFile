@@ -6,6 +6,10 @@ pipeline {
         }
     }
     stages {
+        withEnv([
+            "DOCKER_TLS_VERIFY=1",
+            "DOCKER_HOST=tcp://localhost:2375"
+        ])
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package' 
