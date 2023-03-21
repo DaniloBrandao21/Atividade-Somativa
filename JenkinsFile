@@ -6,13 +6,9 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
-            withEnv([
-            "DOCKER_HOST=tcp://localhost:2375"
-        ])
-            {
-                sh 'mvn -B -DskipTests clean package' 
-            }
+        steps {
+            sh 'mvn -B -DskipTests clean package' 
+        }
         }
     }
 }
