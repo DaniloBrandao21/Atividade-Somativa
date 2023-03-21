@@ -6,8 +6,10 @@ pipeline {
         }
     }
     stages {
-        steps {
-            sh "DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean package"
+        stage('Build') {
+            steps {
+                sh "DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean package"
+            }
         }
     }
 }
