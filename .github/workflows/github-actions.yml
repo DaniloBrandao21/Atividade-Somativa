@@ -1,4 +1,4 @@
-name: dev-pipeline
+name: as1-pipeline
 
 on:
   push:
