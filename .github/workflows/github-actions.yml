@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: AppTest.java
+      - run: mvn -B test --file pom.xml
       
   deploy-job:
     runs-on: ubuntu-latest
