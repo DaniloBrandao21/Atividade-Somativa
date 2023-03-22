@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ./Atividade-Somativa/AS1/modules/demo/src/test/java/com/company/AppTest.java
+      - run: AppTest.java
       
   deploy-job:
     runs-on: ubuntu-latest
